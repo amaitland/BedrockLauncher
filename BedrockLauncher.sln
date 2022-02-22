@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BedrockLauncher.Uninstaller
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BD55A257-6639-42E6-9DE1-AF712F553AA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BedrockLauncher.SkinView3D", "modules\SkinView3D\BedrockLauncher.SkinView3D.csproj", "{CCABEF67-F4BF-4087-9291-62EE5E316934}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BedrockLauncher.Core", "modules\BedrockLauncher.Core\BedrockLauncher.Core.csproj", "{167A048A-8140-4F8D-87C3-A03D07F964D3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JemExtensions", "modules\Extensions.NET\JemExtensions.csproj", "{6718749F-4346-4E5E-85DF-D47FAF22C9B6}"
@@ -26,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BedrockLauncher.UpdateProce
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25A7C91E-529D-41E5-A7D0-4EBC727E2DE4}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Downloads\appveyor.yml = ..\..\..\..\Downloads\appveyor.yml
+		..\..\Downloads\appveyor.yml = ..\..\Downloads\appveyor.yml
 		crowdin.yml = crowdin.yml
 	EndProjectSection
 EndProject
@@ -72,18 +70,6 @@ Global
 		{3232778B-1A3B-4D31-88A1-7A43B8B66723}.Release|x64.Build.0 = Release|Any CPU
 		{3232778B-1A3B-4D31-88A1-7A43B8B66723}.Release|x86.ActiveCfg = Release|Any CPU
 		{3232778B-1A3B-4D31-88A1-7A43B8B66723}.Release|x86.Build.0 = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|x64.Build.0 = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Debug|x86.Build.0 = Debug|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|x64.ActiveCfg = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|x64.Build.0 = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|x86.ActiveCfg = Release|Any CPU
-		{CCABEF67-F4BF-4087-9291-62EE5E316934}.Release|x86.Build.0 = Release|Any CPU
 		{167A048A-8140-4F8D-87C3-A03D07F964D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{167A048A-8140-4F8D-87C3-A03D07F964D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{167A048A-8140-4F8D-87C3-A03D07F964D3}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -174,7 +160,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3232778B-1A3B-4D31-88A1-7A43B8B66723} = {BD55A257-6639-42E6-9DE1-AF712F553AA2}
-		{CCABEF67-F4BF-4087-9291-62EE5E316934} = {BD55A257-6639-42E6-9DE1-AF712F553AA2}
 		{167A048A-8140-4F8D-87C3-A03D07F964D3} = {BD55A257-6639-42E6-9DE1-AF712F553AA2}
 		{6718749F-4346-4E5E-85DF-D47FAF22C9B6} = {BD55A257-6639-42E6-9DE1-AF712F553AA2}
 		{8D88D5FF-5132-4605-851D-2E020EA6483B} = {BD55A257-6639-42E6-9DE1-AF712F553AA2}

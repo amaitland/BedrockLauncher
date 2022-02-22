@@ -120,7 +120,6 @@
 		<ProjectReference Include="..\modules\BedrockLauncher.UI\BedrockLauncher.UI.csproj" />
 		<ProjectReference Include="..\modules\BedrockLauncher.UpdateProcessor\BedrockLauncher.UpdateProcessor.csproj" />
 		<ProjectReference Include="..\modules\Extensions.NET\JemExtensions.csproj" />
-		<ProjectReference Include="..\modules\SkinView3D\BedrockLauncher.SkinView3D.csproj" />
 		<ProjectReference Include="..\modules\BedrockLauncher.Uninstaller\BedrockLauncher.Uninstaller.csproj" />
 	</ItemGroup>
 	<ItemGroup>
