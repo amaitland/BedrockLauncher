@@ -571,7 +571,6 @@
 		<BaseOutputPath>bin\</BaseOutputPath>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
-		<IsPublishable>False</IsPublishable>
 		<Company />
 		<PackageId>BedrockLauncher</PackageId>
 		<Authors>CarJem Generations</Authors>
@@ -580,22 +579,7 @@
 		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 		<SelfContained>false</SelfContained>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<WarningLevel>0</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<WarningLevel>0</WarningLevel>
-	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Update="chromiumembeddedframework.runtime.win-arm64" Version="98.1.21" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Update="chromiumembeddedframework.runtime.win-x64" Version="98.1.21" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Update="chromiumembeddedframework.runtime.win-x86" Version="98.1.21" />
 	</ItemGroup>
 </Project>
