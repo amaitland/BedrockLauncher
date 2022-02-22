@@ -362,3 +362,6 @@ MigrationBackup/
 .ionide/
 
 solution_binaries/Publisher/
+
+modules/BedrockLauncher.UpdateProcessor/Runtimes/win-x86
+modules/BedrockLauncher.UpdateProcessor/Runtimes/win-x64

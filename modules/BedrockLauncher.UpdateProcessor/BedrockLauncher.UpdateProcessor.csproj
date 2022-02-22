@@ -43,6 +43,6 @@
     <ProjectReference Include="..\Extensions.NET\JemExtensions.csproj" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd &quot;$(MSBuildProjectDirectory)\Runtimes&quot;&#xD;&#xA;rmdir &quot;win-x86&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\Release\Win32&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x86&quot; /E /I /Q&#xD;&#xA;rmdir &quot;win-x64&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\Release\x64&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x64&quot; /E /I /Q" />
+    <Exec Command="cd &quot;$(MSBuildProjectDirectory)\Runtimes&quot;&#xD;&#xA;rmdir &quot;win-x86&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\$(Configuration)\Win32&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x86&quot; /E /I /Q&#xD;&#xA;rmdir &quot;win-x64&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\$(Configuration)\x64&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x64&quot; /E /I /Q" />
   </Target>
 </Project>
