@@ -3,6 +3,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>BedrockLauncher.UpdateProcessor</RootNamespace>
     <AssemblyName>BedrockLauncher.UpdateProcessor</AssemblyName>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup>
     <CsWinRTIncludes>TokenBrokerInternal</CsWinRTIncludes>
@@ -23,26 +25,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Runtimes\win-x86\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Runtimes\win-x64\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <PropertyGroup />
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
-  </PropertyGroup>
-  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Extensions.NET\JemExtensions.csproj" />
   </ItemGroup>
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd &quot;$(MSBuildProjectDirectory)\Runtimes&quot;&#xD;&#xA;rmdir &quot;win-x86&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\$(Configuration)\Win32&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x86&quot; /E /I /Q&#xD;&#xA;rmdir &quot;win-x64&quot; /s /q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\BedrockLauncher.TokenBroker\bin\$(Configuration)\x64&quot; &quot;$(MSBuildProjectDirectory)\Runtimes\win-x64&quot; /E /I /Q" />
-  </Target>
 </Project>

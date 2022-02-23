@@ -22,45 +22,28 @@
 		<UseWPF>true</UseWPF>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-	</PropertyGroup>
-	<PropertyGroup>
 		<StartupObject>BedrockLauncher.Program</StartupObject>
-	</PropertyGroup>
-	<PropertyGroup>
 		<ApplicationIcon>Resources\images\icons\ico\launcher_icon.ico</ApplicationIcon>
-	</PropertyGroup>
-	<PropertyGroup>
 		<TargetZone>LocalIntranet</TargetZone>
-	</PropertyGroup>
-	<PropertyGroup>
 		<GenerateManifests>false</GenerateManifests>
-	</PropertyGroup>
-	<PropertyGroup>
 		<SignManifests>false</SignManifests>
-	</PropertyGroup>
-	<PropertyGroup>
 		<ManifestCertificateThumbprint>C12BAB0D8397D937265B99E7577F9696AFDF57C2</ManifestCertificateThumbprint>
-	</PropertyGroup>
-	<PropertyGroup>
 		<ManifestKeyFile>BedrockLauncher.pfx</ManifestKeyFile>
-	</PropertyGroup>
-	<PropertyGroup>
-		<AssemblyOriginatorKeyFile>
-		</AssemblyOriginatorKeyFile>
-	</PropertyGroup>
-	<PropertyGroup>
+		<AssemblyOriginatorKeyFile />
 		<DelaySign>false</DelaySign>
-	</PropertyGroup>
-	<PropertyGroup>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
-	</PropertyGroup>
-	<PropertyGroup>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+		<BaseOutputPath>bin\</BaseOutputPath>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+		<Company />
+		<PackageId>BedrockLauncher</PackageId>
+		<Authors>CarJem Generations</Authors>
+		<Copyright>2022 © CarJem Generations</Copyright>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<SelfContained>false</SelfContained>
 		<RunPostBuildEvent>Always</RunPostBuildEvent>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Publish|AnyCPU'">
-		<OutputPath>bin\Publish\</OutputPath>
-		<Optimize>true</Optimize>
-		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Update="app.manifest">
@@ -114,6 +97,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\modules\BedrockLauncher.Core\BedrockLauncher.Core.csproj" />
 		<ProjectReference Include="..\modules\BedrockLauncher.Dungeons\BedrockLauncher.Dungeons.csproj" />
+		<ProjectReference Include="..\modules\BedrockLauncher.TokenBroker\BedrockLauncher.TokenBroker.vcxproj" SetPlatform="Platform=Win32" ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\modules\BedrockLauncher.TokenBroker\BedrockLauncher.TokenBroker.vcxproj" SetPlatform="Platform=x64" ReferenceOutputAssembly="false" />
 		<ProjectReference Include="..\modules\BedrockLauncher.UI\BedrockLauncher.UI.csproj" />
 		<ProjectReference Include="..\modules\BedrockLauncher.UpdateProcessor\BedrockLauncher.UpdateProcessor.csproj" />
 		<ProjectReference Include="..\modules\Extensions.NET\JemExtensions.csproj" />
@@ -565,21 +550,10 @@
 		<Page Remove="Controls\Various\LoadingAnimation.xaml" />
 		<Page Remove="Data\Versions.xaml" />
 	</ItemGroup>
-	<PropertyGroup />
-	<PropertyGroup>
-		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
-		<BaseOutputPath>bin\</BaseOutputPath>
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
-		<Company />
-		<PackageId>BedrockLauncher</PackageId>
-		<Authors>CarJem Generations</Authors>
-		<Copyright>2022 © CarJem Generations</Copyright>
-		<AnalysisLevel>latest</AnalysisLevel>
-		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-		<SelfContained>false</SelfContained>
-	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(MSBuildProjectDirectory)\..\modules\BedrockLauncher.TokenBroker\bin\$(Configuration)\Win32\*.*&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)Runtimes\win-x86&quot; /E /I /Q&#xD;&#xA;xcopy &quot;$(MSBuildProjectDirectory)\..\modules\BedrockLauncher.TokenBroker\bin\$(Configuration)\x64\*.*&quot;   &quot;$(MSBuildProjectDirectory)\$(OutDir)Runtimes\win-x64&quot; /E /I /Q" />
+	</Target>
 </Project>
